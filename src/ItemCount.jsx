@@ -9,6 +9,9 @@ function ItemCount(props) {
   function handgleResta() {
     if (count > 1) setCount(count - 1);
   }
+  function addToCart() {
+    if (count <= props.stock) alert(`se agregaron ${count} productos`);
+  }
 
   return (
     <div>
@@ -16,7 +19,7 @@ function ItemCount(props) {
       <span>{count}</span>
       <button onClick={handgleSuma}>+</button>
       <br />
-      <button>{props.titulo}</button>
+      <button onClick={addToCart}>{props.titulo}</button>
     </div>
   );
 }
